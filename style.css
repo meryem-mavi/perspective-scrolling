@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.group::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: "Myriad Pro", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #787878;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+@media (max-width:600px) {
+    body{
+        font-size: 70%;
+    }
+}
+a {
+    text-decoration: none;
+    color: #08c;
+}
+strong{
+    font-weight: normal;
+    color: #303030;
+}
+.wrap-3d{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-top: 5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    background-color: #f0f0f0;
+    transform-style: preserve-3d;
+    perspective: 150rem;
+    perspective-origin: 50% 110%;
+}
+.item-3d{
+    width: 100%;
+    margin-bottom: 20%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    transform-origin: 50% 100%;
+    transform-style: preserve-3d;
+}
+@media (max-width:600px){
+    .item-3d{
+        margin-bottom: 40%;
+    }
+}
+.ground {
+    position: absolute;
+    top: 0;
+    right: -50%;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    margin: 0 auto;
+    background-image: linear-gradient(#d8d8d8, #f2f2f2, 60%);
+    background-size: 100%;
+    transform-origin: 50% 100%;
+    transform: rotateX(70deg);
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.ground::before, .ground1.group::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+.ground::before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    max-width: 50rem;
+    background-image: radial-gradient(#ccc, rgba(204, 204, 204, 0) 60%);
+    background-size: 50% 80%;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+}
+.group::after{
+    bottom: -500px;
+    left: 0;
+    height: 500px;
+    background-image: linear-gradient(#d8d8d8, #f2f2f2);
+    transform-origin: 50% 0;
+    transform: rotateX(-70deg);
+}
